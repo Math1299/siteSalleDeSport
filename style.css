@@ -7,6 +7,10 @@
   font-size: 62.5%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", Helvetica, sans-serif;
   background: #f1f1f1;
@@ -19,7 +23,12 @@ nav {
   width: 100%;
   height: 70px;
   z-index: 10000;
+  background: transparent;
+  transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+nav.anim-nav {
   background: #000;
+  border-bottom: 1px solid #f1f1f1;
 }
 nav ul {
   width: 100%;
@@ -419,4 +428,205 @@ h1 {
   cursor: pointer;
   border: none;
   outline: none;
+}
+@media screen and (max-width: 850px) {
+  .titre-equipement {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .titre-equipement {
+    font-size: 3.5rem;
+  }
+}
+
+/* -------------------------------------   Parallax  ------------------------------- */
+
+.parallax {
+  background-image: url(ressources/img-paral.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax-txt {
+  font-size: 10rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+@media screen and (max-width: 550px) {
+  .parallax-txt {
+    font-size: 5rem;
+  }
+}
+
+/* -------------------------------------  Section Tarifs  ------------------------------- */
+.titre-tarifs {
+  font-size: 5rem;
+  text-align: center;
+  padding: 50px 0;
+}
+#tarifs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70%;
+  max-width: 1300px;
+  min-width: 300px;
+  margin: 0 auto 100px;
+}
+.carte-tarif {
+  width: 350px;
+  height: auto;
+  background-image: linear-gradient(
+      12deg,
+      rgba(193, 193, 193, 0.05) 0%,
+      rgba(193, 193, 193, 0.05) 2%,
+      rgba(129, 129, 129, 0.05) 2%,
+      rgba(129, 129, 129, 0.05) 27%,
+      rgba(185, 185, 185, 0.05) 27%,
+      rgba(185, 185, 185, 0.05) 66%,
+      rgba(83, 83, 83, 0.05) 66%,
+      rgba(83, 83, 83, 0.05) 100%
+    ),
+    linear-gradient(
+      321deg,
+      rgba(240, 240, 240, 0.05) 0%,
+      rgba(240, 240, 240, 0.05) 13%,
+      rgba(231, 231, 231, 0.05) 13%,
+      rgba(231, 231, 231, 0.05) 34%,
+      rgba(139, 139, 139, 0.05) 34%,
+      rgba(139, 139, 139, 0.05) 71%,
+      rgba(112, 112, 112, 0.05) 71%,
+      rgba(112, 112, 112, 0.05) 100%
+    ),
+    linear-gradient(
+      236deg,
+      rgba(189, 189, 189, 0.05) 0%,
+      rgba(189, 189, 189, 0.05) 47%,
+      rgba(138, 138, 138, 0.05) 47%,
+      rgba(138, 138, 138, 0.05) 58%,
+      rgba(108, 108, 108, 0.05) 58%,
+      rgba(108, 108, 108, 0.05) 85%,
+      rgba(143, 143, 143, 0.05) 85%,
+      rgba(143, 143, 143, 0.05) 100%
+    ),
+    linear-gradient(
+      96deg,
+      rgba(53, 53, 53, 0.05) 0%,
+      rgba(53, 53, 53, 0.05) 53%,
+      rgba(44, 44, 44, 0.05) 53%,
+      rgba(44, 44, 44, 0.05) 82%,
+      rgba(77, 77, 77, 0.05) 82%,
+      rgba(77, 77, 77, 0.05) 98%,
+      rgba(8, 8, 8, 0.05) 98%,
+      rgba(8, 8, 8, 0.05) 100%
+    ),
+    linear-gradient(334deg, hsl(247, 0%, 2%), hsl(247, 0%, 2%));
+  color: #f1f1f1;
+  margin: 20px 10px;
+  border-radius: 5px;
+}
+.carte-tarif h3 {
+  text-align: center;
+  font-size: 4.5rem;
+  margin: 25px 0;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  position: relative;
+}
+.prix-carte {
+  text-align: center;
+  font-size: 3rem;
+  margin: 25px 0;
+}
+.prix-carte span {
+  font-size: 8rem;
+  position: relative;
+}
+.prix-carte span::after {
+  content: "€";
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  font-size: 2.5rem;
+}
+.info-carte {
+  width: 170px;
+  margin: 20px auto 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 2.2rem;
+}
+.info-carte img {
+  width: 20px;
+  position: absolute;
+  left: -6px;
+}
+
+/* -------------------------------------  Section Contact  ------------------------------- */
+.titre-contact {
+  border-top: 1px dashed #000;
+  text-align: center;
+  font-size: 5rem;
+  padding: 50px 0;
+}
+form {
+  width: 50%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: 100px;
+  position: relative;
+}
+label,
+input {
+  width: 100%;
+  font-size: 2rem;
+  margin: 5px 0;
+}
+form input {
+  padding: 10px 5px;
+}
+input:nth-child(4) {
+  margin-bottom: 20px;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+  font-size: 2rem;
+  padding: 15px;
+}
+label:nth-child(5) {
+  margin-bottom: 10px;
+}
+.form-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 1.8rem;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+@media screen and (max-width: 1100px) {
+  #contact {
+    width: 80%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px dashed #000;
+  font-size: 1.6rem;
 }
